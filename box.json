@@ -1,0 +1,20 @@
+{
+    "name":"CB Breadcrumb",
+    "version":"1.0.0",
+    "author":"Gary Stanton",
+    "location":"GaryStanton/cbbreadcrumb#v1.0.0",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/GaryStanton/CBBreadcrumb"
+    },
+    "bugs":"https://github.com/GaryStanton/CBBreadcrumb/issues",
+    "slug":"CBBreadcrumb",
+    "shortDescription":"Automatically generate breadcrumb data and HTML in your ColdBox application, using the Routing table.",
+    "type":"modules",
+    "keywords":"Coldbox breadcrumb breadcrumbs routing",
+    "scripts":{
+        "postVersion":"package set location='GaryStanton/CBBreadcrumb#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    }
+}
