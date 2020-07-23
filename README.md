@@ -9,7 +9,7 @@ box install cbbreadcrumb
 
 ## Usage
 An instance of CB Breadcrumb is automatically added to each request and is available in the private request context.
-You may display breadcrumb HTML in your layout with a single line of code: `#prc.cbbreadcrumb.getBreadcrumbHTML()#`
+You may display breadcrumb HTML in your layout with a single line of code: `#prc.cbbreadcrumb.getBreadcrumbHTML()#`  
 The default HTML format uses Bootstrap 4 syntax, though you may override the function if necessary.
 
 ### Page names
