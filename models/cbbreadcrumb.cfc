@@ -63,7 +63,7 @@ component accessors="true" {
 			name = 'Home'
 		,	link = context.buildLink('/')
 	){
-		if (breadcrumbnodes[1].name != Arguments.name) {
+		if (breadcrumbnodes.len() == 0 || breadcrumbnodes[1].name != Arguments.name) {
 			breadcrumbnodes.prepend({
 				name 	= 'Home',
 				link 	= ''
