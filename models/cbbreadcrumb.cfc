@@ -101,6 +101,21 @@ component accessors="true" {
 
 
 	/**
+	 * When passed an array of pattern nodes, replace any tokens present in the RC with the assigned value
+	 */
+	function replaceTokens(required array nodes){
+		var rc = context.getCollection();
+		var returnArray = [];
+
+		Arguments.nodes.each(function(thisNode, index) {
+			returnArray.append(left(thisNode, 1) == ':' && structKeyExists(rc, listLast(thisNode, ':')) ? rc[listLast(thisNode, ':')] : thisNode);
+		});
+
+		return returnArray;
+	}
+
+
+	/**
 	 * Return an array of breadcrumb links
 	 */
 	array function getBreadcrumbArray() {
@@ -108,7 +123,7 @@ component accessors="true" {
 		getRouteArray().each(function(thisNode, index) {
 			breadcrumbArray.append({
 				name 	= Len(thisNode.name) ? thisNode.name : getToken(thisNode.pattern, index, '/'), // Use pattern node if no name available
-				link 	= Replace(ArrayToList(ListToArray(thisNode.pattern, '/'), '.'), '.:', ':', 'ALL') // Convert from / to . whilst also removing trailing slash
+				link 	= Replace(ArrayToList(replaceTokens(ListToArray(thisNode.pattern, '/')), '.'), '.:', ':', 'ALL') // Convert from / to . whilst also removing trailing slash
 			});
 		});
 
