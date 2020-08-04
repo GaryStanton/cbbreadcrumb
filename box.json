@@ -1,8 +1,8 @@
 {
     "name":"CB Breadcrumb",
-    "version":"1.0.0",
+    "version":"1.1.0",
     "author":"Gary Stanton",
-    "location":"GaryStanton/cbbreadcrumb#v1.0.0",
+    "location":"GaryStanton/CBBreadcrumb#v1.1.0",
     "repository":{
         "type":"git",
         "URL":"https://github.com/GaryStanton/CBBreadcrumb"
